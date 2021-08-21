@@ -11,6 +11,7 @@ def build_all_ternary_strings_of_length_nine():
 	'''
 	return build_all_ternary_strings_of_length_nine_helper([])
 
+
 def build_all_ternary_strings_of_length_nine_helper(cur_list):
 	'''See above.  Enjoy the recursion magic.
 
@@ -30,8 +31,6 @@ def build_all_ternary_strings_of_length_nine_helper(cur_list):
 		cur_list+['2'])
 
 	return first_branch + second_branch + third_branch
-
-
 
 
 def main():
