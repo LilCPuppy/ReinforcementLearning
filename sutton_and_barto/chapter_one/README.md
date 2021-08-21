@@ -48,3 +48,13 @@ The *policy* would be the rule that tells the agent/player what move to make nex
 
 The first thing we want to do is have a table of scalars, bijectively associated with every state of the game.  This scalar will represent the probability that we will win the game given that state.  Hence, this is our **value function** that will be learned, since we will update it over time.  To initialize this function, any states with three x's in a row is assigned 1.0 (since we already won), any state with three o's in a row is assigned 0.0 (since we already lost), and we give everything else 0.5, a coin-tosses chance.
 
+So how will we update the value function?  It's intuitive that as we play the game against the opponent and accumulate sequences of boards, we want the *values of the earlier states to become closer to the values of the later states*.
+
+Let E denote the set of possible states/board configurations (so |E| = 19683 if we ignore impossible boards w.r.t to the rules).  Then let,
+<div align=center>V:E &rarr; &Kfr;</div>.
+Then for a sequence of of boards *in which it was the agents turn to play* for a single game, namely
+<div align=center> {S<sub>1</sub>, ..., S<sub>N</sub>} </div>
+and
+<div align=center> V(S<sub>k</sub>) = V(S<sub>k</sub>) + &alpha;[ V(S<sub>k+1</sub>)-V(S<sub>k</sub>) ]</div>.
+
+Colloquially, we move the value of the board an &alpha; amount in the value of the next board's direction.  We call &alpha; the step size, and this can be tuned by the programmer.  Note that k < N and this recursive definition is well-defined, since we have already accounted for the values of the boards at the termination of the game.
