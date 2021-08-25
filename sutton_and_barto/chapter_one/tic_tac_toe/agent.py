@@ -9,7 +9,7 @@ class Agent:
 		self.step_size = 0.1
 
 
-	def initialize_value_function(self):
+	def init_value_function(self):
 		with open('initial_value_states.txt', 'r') as f:
 			for line in f:
 				self.value_function[line[3:44:5]] = float(line[-5:-2])
@@ -57,7 +57,7 @@ class Agent:
 		Returns:
 			A reference to the value function.
 		'''
-		prevous_state, was_exploiting = state_hash_sequence[0]
+		previous_state, was_exploiting = state_hash_sequence[0]
 		for index, pair in enumerate(state_hash_sequence[1:]):
 			if not was_exploiting:
 				continue
