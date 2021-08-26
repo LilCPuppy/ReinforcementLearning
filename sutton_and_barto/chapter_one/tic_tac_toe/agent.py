@@ -57,9 +57,9 @@ class Agent:
 		Returns:
 			A reference to the value function.
 		'''
-		previous_state, was_exploiting = state_hash_sequence[0]
+		previous_state, _ = state_hash_sequence[0]
 		for index, pair in enumerate(state_hash_sequence[1:]):
-			if not was_exploiting:
+			if not pair[1]:
 				continue
 
 			current_state_value = self.value_function[pair[0]]
