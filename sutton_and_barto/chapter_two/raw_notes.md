@@ -3,7 +3,9 @@
 ## Introduction
 
 Test this formula.
-<p align="center"><img src="https://rawgit.com/LilCPuppy/ReinforcementLearning/main/svgs/980caffcc884d89bb3dc24e04b8d678a.svg?invert_in_darkmode" align=middle width=113.49264465pt height=32.990165999999995pt/></p>
+$$
+\frac{1}{2}(r_1 + \dots + r_n)
+$$
 
 The most important feature about reinforcement learning from other types of the learning si that it uses training data to *evaluate* actions rather than
 *instructing* the agent on what to do with correct actions.
