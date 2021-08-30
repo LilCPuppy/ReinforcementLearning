@@ -18,7 +18,7 @@ $$
 $$
 and when picking an action, you recieve a reward signal chosen from a stationary probability distribution associated with that action,
 $$
-\Big\{P_{a_1}, \dots P_{a_n}\Big\}
+\Big\{P_{a_1}, \dots, P_{a_n}\Big\}
 $$
 
 **Goal**: Maximize the reward signal over some discrete time.
@@ -30,17 +30,21 @@ and play exclusively on these levers.
 As we just mentioned, each lever (or arm/action) has an associated probability distribution, which has it's own expected value and variance.  This motivates a
 definition.
 
-**Definition**: The *value* of an action, $a_k, k=1, \dots n$, is the *expected value of $P_{a_k}$*, denoted
-\mathbb{Q}^*(a_k):= \mathbb{E}(P_{a_k})$, i.e.
-<div align=center>Q<sup>&sext;</sup>(a<sub>k</sub>) = &Eopf;(P<sub>a<sub>k</sub></sub>).</div>
+**Definition**: The *value* of an action, $a_k\;\;, k=1, \dots n$, is the *expected value of $P_{a_k}$*, denoted
+Q^*(a_k)$, i.e.
+$$
+Q^*(a_k):=E(P_{a_k}).
+$$
 
 Obviously, if we knew the expected values of all the distributions beforehand, there would be no issue, because we would pick the action with the highest value.
 However, since we don't, we can only attain *estimates* of the values based on a historical record or picking an action.  Hence, we have a tradeoff: do we exploit
 the levers we know?  Or do we explore and improve teh estimate of the levers that we don't?  Over a period of time, attaining the maximum reward may require a
 combination of these.
 
-This motivates the question, how should we estimate Q<sup>&sext;</sup>(a<sub>k</sub>)?  If at time t we have chosen an action a<sub>k</sub> m<sub>k</sub> time,
-then it's intuitive to estimate Q<sup>&sext;</sup>(a<sub>k</sub>) as:
-<div align=center>Q<sub>t</sub>(a<sub>k</sub>) = (<sup>1</sup> &#8260; <sub>m<sub>k</sub></sub>) (r<sub>1</sub> + ... + r<sub>m<sub>k</sub></sub>).</div>
+This motivates the question, how should we estimate $Q^*(a_k)$?  If at time t we have chosen an action $a_k$ a total of $m_k$ times,
+then it's intuitive to estimate $Q^*(a_k)$ as:
+$$
+Q_t(a_k) = \frac{1}{m_k}\;\Bigg(r_1+\dots+r_{m_k}\Bigg)
+$$
 
-We define Q<sub>0</sub>(a<sub>t</sub>) := 0 (or some other default value).
+We define $Q_0(a_t):=0$ (or some other default value).
