@@ -13,9 +13,9 @@ available".  Another key distinction between evaluative vs. instructive feedback
 ## The N-Armed Bandit
 
 A motivating example used by Sutton and Barto is the n-armed bandit.  Suppose you are faced with a set of n different actions or choices
-<p align="center"><img src="https://rawgit.com/LilCPuppy/ReinforcementLearning/main/svgs/c1143b0f8370f09ab2aa5f2eedc889be.svg?invert_in_darkmode" align=middle width=92.1479988pt height=29.58934275pt/></p>
+<p align="center"><img src="https://github.com/LilCPuppy/ReinforcementLearning/blob/main/sutton_and_barto/chapter_two/svgs/c1143b0f8370f09ab2aa5f2eedc889be.svg?invert_in_darkmode" align=middle width=92.1479988pt height=29.58934275pt/></p>
 and when picking an action, you recieve a reward signal chosen from a stationary probability distribution associated with that action,
-<p align="center"><img src="https://rawgit.com/LilCPuppy/ReinforcementLearning/main/svgs/38039535e1f1cf28c9178b99c9756761.svg?invert_in_darkmode" align=middle width=102.63026729999999pt height=29.58934275pt/></p>
+<p align="center"><img src="https://github.com/LilCPuppy/ReinforcementLearning/blob/main/sutton_and_barto/chapter_two/svgs/38039535e1f1cf28c9178b99c9756761.svg?invert_in_darkmode" align=middle width=102.63026729999999pt height=29.58934275pt/></p>
 
 **Goal**: Maximize the reward signal over some discrete time.
 
@@ -26,7 +26,7 @@ and play exclusively on these levers.
 As we just mentioned, each lever (or arm/action) has an associated probability distribution, which has it's own expected value and variance.  This motivates a
 definition.
 
-**Definition**: The *value* of an action, <img src="https://rawgit.com/LilCPuppy/ReinforcementLearning/main/svgs/f207402f49c3d71a672a8f14fc518943.svg?invert_in_darkmode" align=middle width=102.3855921pt height=22.831056599999986pt/>, is the *expected value of <img src="https://rawgit.com/LilCPuppy/ReinforcementLearning/main/svgs/3d02cfa2ebf67fc3d749503f621bd042.svg?invert_in_darkmode" align=middle width=24.048253349999992pt height=22.465723500000017pt/>*, denoted
+**Definition**: The *value* of an action, <img src="https://github.com/LilCPuppy/ReinforcementLearning/blob/main/sutton_and_barto/chapter_two/svgs/f207402f49c3d71a672a8f14fc518943.svg?invert_in_darkmode" align=middle width=102.3855921pt height=22.831056599999986pt/>, is the *expected value of <img src="https://github.com/LilCPuppy/ReinforcementLearning/blob/main/sutton_and_barto/chapter_two/svgs/3d02cfa2ebf67fc3d749503f621bd042.svg?invert_in_darkmode" align=middle width=24.048253349999992pt height=22.465723500000017pt/>*, denoted
 \mathbb{Q}^*(a_k):= \mathbb{E}(P_{a_k})$, i.e.
 <div align=center>Q<sup>&sext;</sup>(a<sub>k</sub>) = &Eopf;(P<sub>a<sub>k</sub></sub>).</div>
 
