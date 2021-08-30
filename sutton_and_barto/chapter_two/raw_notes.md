@@ -33,8 +33,8 @@ definition.
 **Definition**: The *value* of an action, $a_k\;\;, k=1, \dots n$, is the *expected value of $P_{a_k}$*, denoted
 $Q^*(a_k)$, i.e.
 $$
-Q^*(a_k):=E(P_{a_k})
-$$.
+Q^*(a_k):=E(P_{a_k}).
+$$
 
 Obviously, if we knew the expected values of all the distributions beforehand, there would be no issue, because we would pick the action with the highest value.
 However, since we don't, we can only attain *estimates* of the values based on a historical record or picking an action.  Hence, we have a tradeoff: do we exploit
@@ -47,4 +47,20 @@ $$
 Q_t(a_k) = \frac{1}{m_k}\;\Bigg(r_1+\dots+r_{m_k}\Bigg)
 $$
 
-We define $Q_0(a_t):=0$ (or some other default value).
+We define $Q_0(a_t):=0$ (or some other default value).  We note that this estimate has some measure of "goodness" when observing that
+$$
+\lim_{m_k\to\infty} Q_t(a_k) = Q^*(a_k).
+$$
+
+Clearly we don't want to play greedily, i.e. always pick an action $a^*$ such that,
+$$
+a^* = \argmax_a \;Q_{t}(a)
+$$
+since we would never explore (beyond some action set we already know).
+
+A way to promote this exploration is to have an $\epsilon$ chance to explore, and pick $a^* = \argmax_a \; Q_t(a)$ the rest of the time.  These methods are call *$\epsilon$-greedy methods$.  In the asymptotic case, we see that we will have to eventually pick every action an infinite number of times (weird to think about, huh?), and hence we maintain that
+$$
+\lim_{t\to\infty} Q_t = Q^*.
+$$
+
+Temp
