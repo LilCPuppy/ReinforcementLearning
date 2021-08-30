@@ -54,13 +54,12 @@ $$
 
 Clearly we don't want to play greedily, i.e. always pick an action $a^*$ such that,
 $$
-a^* = \argmax_a \;Q_{t}(a)
+a^* = \text{arg max}_a \;Q_{t}(a)
 $$
 since we would never explore (beyond some action set we already know).
 
-A way to promote this exploration is to have an $\epsilon$ chance to explore, and pick $a^* = \argmax_a \; Q_t(a)$ the rest of the time.  These methods are call *$\epsilon$-greedy methods$.  In the asymptotic case, we see that we will have to eventually pick every action an infinite number of times (weird to think about, huh?), and hence we maintain that
+A way to promote this exploration is to have an $\epsilon$ chance to explore, and pick $a^* = \text{arg max}_a \; Q_t(a)$ the rest of the time.  These methods are call $\epsilon$-greedy methods.  In the asymptotic case, we see that we will have to eventually pick every action an infinite number of times (weird to think about, huh?), and hence we maintain that
 $$
 \lim_{t\to\infty} Q_t = Q^*.
 $$
 
-Temp
