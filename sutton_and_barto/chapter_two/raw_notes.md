@@ -31,10 +31,10 @@ As we just mentioned, each lever (or arm/action) has an associated probability d
 definition.
 
 **Definition**: The *value* of an action, $a_k\;\;, k=1, \dots n$, is the *expected value of $P_{a_k}$*, denoted
-Q^*(a_k)$, i.e.
+$Q^*(a_k)$, i.e.
 $$
-Q^*(a_k):=E(P_{a_k}).
-$$
+Q^*(a_k):=E(P_{a_k})
+$$.
 
 Obviously, if we knew the expected values of all the distributions beforehand, there would be no issue, because we would pick the action with the highest value.
 However, since we don't, we can only attain *estimates* of the values based on a historical record or picking an action.  Hence, we have a tradeoff: do we exploit
