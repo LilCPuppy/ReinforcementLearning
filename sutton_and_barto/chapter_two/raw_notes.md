@@ -13,9 +13,13 @@ available".  Another key distinction between evaluative vs. instructive feedback
 ## The N-Armed Bandit
 
 A motivating example used by Sutton and Barto is the n-armed bandit.  Suppose you are faced with a set of n different actions or choices
-<div align=center>{a<sub>1</sub>,...,a<sub>n</sub>},</div>
+$$
+\Big\{a_1, \dots, a_n\Big\}
+$$
 and when picking an action, you recieve a reward signal chosen from a stationary probability distribution associated with that action,
-<div align=center>{P<sub>a<sub>1</sub></sub>, ..., P<sub>a<sub>n</sub></sub>}.</div>
+$$
+\Big\{P_{a_1}, \dots P_{a_n}\Big\}
+$$
 
 **Goal**: Maximize the reward signal over some discrete time.
 
