@@ -37,4 +37,6 @@ combination of these.
 
 This motivates the question, how should we estimate Q<sup>&sext;</sup>(a<sub>k</sub>)?  If at time t we have chosen an action a<sub>k</sub> m<sub>k</sub> time,
 then it's intuitive to estimate Q<sup>&sext;</sup>(a<sub>k</sub>) as:
-<div align=center>Q<sub>t</sub>(a<sub>k</sub>) = (<sup>1</sup> &#8260; <sub>m<sub>k</sub></sub>) (r<sub>1</sub> + ... + r<sub>m<sub>k</sub></sub>)
+<div align=center>Q<sub>t</sub>(a<sub>k</sub>) = (<sup>1</sup> &#8260; <sub>m<sub>k</sub></sub>) (r<sub>1</sub> + ... + r<sub>m<sub>k</sub></sub>).</div>
+
+We define Q<sub>0</sub>(a<sub>t</sub>) := 0 (or some other default value).
