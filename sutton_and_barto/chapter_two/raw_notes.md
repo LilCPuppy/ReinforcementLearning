@@ -2,11 +2,6 @@
 
 ## Introduction
 
-Test this formula.
-$$
-\frac{1}{2}(r_1 + \dots + r_n)
-$$
-
 The most important feature about reinforcement learning from other types of the learning si that it uses training data to *evaluate* actions rather than
 *instructing* the agent on what to do with correct actions.
 This creates the need for exploration, since "purely evaluative feedback indicates only how good the action is, but not whether it's the best or worst action
@@ -31,8 +26,8 @@ and play exclusively on these levers.
 As we just mentioned, each lever (or arm/action) has an associated probability distribution, which has it's own expected value and variance.  This motivates a
 definition.
 
-**Definition**: The *value* of an action, a<sub>k</sub> (k = 1, ..., n), is the *expected value of P<sub>a<sub>k</sub></sub>*, denoted
-Q<sup>&sext;</sup>(a<sub>k</sub>), i.e.
+**Definition**: The *value* of an action, $a_k, k=1, \dots n$, is the *expected value of $P_{a_k}$*, denoted
+\mathbb{Q}^*(a_k):= \mathbb{E}(P_{a_k})$, i.e.
 <div align=center>Q<sup>&sext;</sup>(a<sub>k</sub>) = &Eopf;(P<sub>a<sub>k</sub></sub>).</div>
 
 Obviously, if we knew the expected values of all the distributions beforehand, there would be no issue, because we would pick the action with the highest value.

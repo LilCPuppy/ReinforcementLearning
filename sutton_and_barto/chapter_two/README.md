@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The most important feature about reinforcement learning from other types of the learning is that it uses training data to *evaluate* actions rather than
+The most important feature about reinforcement learning from other types of the learning si that it uses training data to *evaluate* actions rather than
 *instructing* the agent on what to do with correct actions.
 This creates the need for exploration, since "purely evaluative feedback indicates only how good the action is, but not whether it's the best or worst action
 available".  Another key distinction between evaluative vs. instructive feedback is as follows:
@@ -26,8 +26,8 @@ and play exclusively on these levers.
 As we just mentioned, each lever (or arm/action) has an associated probability distribution, which has it's own expected value and variance.  This motivates a
 definition.
 
-**Definition**: The *value* of an action, a<sub>k</sub> (k = 1, ..., n), is the *expected value of P<sub>a<sub>k</sub></sub>*, denoted
-Q<sup>&sext;</sup>(a<sub>k</sub>), i.e.
+**Definition**: The *value* of an action, <img src="https://rawgit.com/LilCPuppy/ReinforcementLearning/main/svgs/f207402f49c3d71a672a8f14fc518943.svg?invert_in_darkmode" align=middle width=102.3855921pt height=22.831056599999986pt/>, is the *expected value of <img src="https://rawgit.com/LilCPuppy/ReinforcementLearning/main/svgs/3d02cfa2ebf67fc3d749503f621bd042.svg?invert_in_darkmode" align=middle width=24.048253349999992pt height=22.465723500000017pt/>*, denoted
+\mathbb{Q}^*(a_k):= \mathbb{E}(P_{a_k})$, i.e.
 <div align=center>Q<sup>&sext;</sup>(a<sub>k</sub>) = &Eopf;(P<sub>a<sub>k</sub></sub>).</div>
 
 Obviously, if we knew the expected values of all the distributions beforehand, there would be no issue, because we would pick the action with the highest value.
