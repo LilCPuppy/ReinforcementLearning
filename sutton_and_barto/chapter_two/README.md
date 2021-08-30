@@ -3,7 +3,7 @@
 ## Introduction
 
 Test this formula.
-<p align="center"><img src="https://rawgit.com/LilCPuppy/ReinforcementLearning/sutton_and_barto/chapter_two/svgs/980caffcc884d89bb3dc24e04b8d678a.svg?invert_in_darkmode" align=middle width=113.49264465pt height=32.990165999999995pt/></p>
+<p align="center"><img src="https://github.com/LilCPuppy/ReinforcementLearning/blob/main/sutton_and_barto/chapter_two/svgs/980caffcc884d89bb3dc24e04b8d678a.svg?invert_in_darkmode" align=middle width=113.49264465pt height=32.990165999999995pt/></p>
 
 The most important feature about reinforcement learning from other types of the learning si that it uses training data to *evaluate* actions rather than
 *instructing* the agent on what to do with correct actions.
