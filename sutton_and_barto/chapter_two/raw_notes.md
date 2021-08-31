@@ -63,3 +63,14 @@ $$
 \lim_{t\to\infty} Q_t = Q^*.
 $$
 
+### Softmax Action Selection
+
+The last segment detailed a method for our agent to choose an *action*.  Another way to pick an action is to assign each choice a probability.  For example, say we pick
+action $a$ with probability
+$$
+P(a) = \frac{e^{Q_t(a)/\tau}}{\sum_b e^{Q_t(b)/\tau}}
+$$
+where $b$ iterates over all the possible actions, and $\tau$ corresponds to the *temperature*.  High temperatures cause actions to become close to equiprobable, and low temperatures cause a greater difference in selection probability.  In fact, as $\tau\to 0$, the softmax action selection becomes the same as greedy action selection.
+
+It's unclear whether $\epsilon$-greedy action selection or softmax action selection is more effective.
+The $\epsilon$ methods are easier to tune and dynamically change, whereas the softmax selection means picking $\tau$, hence needing to know how likely action values and powers of $e$.
