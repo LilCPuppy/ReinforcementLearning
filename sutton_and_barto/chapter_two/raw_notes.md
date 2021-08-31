@@ -2,7 +2,7 @@
 
 ## Introduction
 
-The most important feature about reinforcement learning from other types of the learning si that it uses training data to *evaluate* actions rather than
+The most important feature about reinforcement learning from other types of the learning is that it uses training data to *evaluate* actions rather than
 *instructing* the agent on what to do with correct actions.
 This creates the need for exploration, since "purely evaluative feedback indicates only how good the action is, but not whether it's the best or worst action
 available".  Another key distinction between evaluative vs. instructive feedback is as follows:
@@ -92,4 +92,11 @@ In this case, the supervised learning approach would work *only* if the probabil
 
 But if *both* were good (probability of success over $\frac{1}{2}$), or *both* were bad (probability of success less than $\frac{1}{2}$), than the supervised learning methods how no way of determining which choice is *better* (or *worse*).  In the *both bad* case, the algorithm would likely pick a failing action, and always assume the other action is better.  When it picks the other option (and *also* gets failure), it would flip back to the first choice.  This cycles, and we get an oscillating algorithm that cannot truly find the better choice of the two.  In the *both good* case, we would quickly fixate on a single action (since it usually wins, the other must usually lose, right?), typically, the first action picked.
 
-So what does a reinforcement learning approach look like?
+So what does a reinforcement learning approach look like?  Let
+$$
+\pi_t(x) = \text{"The probability of selecting action }x\text{ at time}t\text{."}
+$$
+We then define the *next* timestep as
+$$
+\pi_{t+1}(x) = \pi_t(d_t) + \alpha\Big[1 - \pi_t(d_t)\Big].
+$$
