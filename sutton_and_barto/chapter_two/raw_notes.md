@@ -70,7 +70,26 @@ action $a$ with probability
 $$
 P(a) = \frac{e^{Q_t(a)/\tau}}{\sum_b e^{Q_t(b)/\tau}}
 $$
-where $b$ iterates over all the possible actions, and $\tau$ corresponds to the *temperature*.  High temperatures cause actions to become close to equiprobable, and low temperatures cause a greater difference in selection probability.  In fact, as $\tau\to 0$, the softmax action selection becomes the same as greedy action selection.
+where $b$ iterates over all the possible actions, and $\tau$ corresponds to the temperature.  High temperatures cause actions to become close to equiprobable, and low temperatures cause a greater difference in selection probability.  In fact, as $\tau \to 0$, the softmax action selection becomes the same as greedy action selection.
 
 It's unclear whether $\epsilon$-greedy action selection or softmax action selection is more effective.
 The $\epsilon$ methods are easier to tune and dynamically change, whereas the softmax selection means picking $\tau$, hence needing to know how likely action values and powers of $e$.
+
+## Evaluation vs. Instruction
+
+The n-armed bandit problem gives us an example of purely evaluative feedback.
+In reinforcement learning, the "feedback" is independent of the action.  So it's not "real" feedback.  Supervised learning algorithms try to configure/shape themselves to their environment - but they cannot learn to control or influence their environments.
+
+### Example
+
+Let's dig into these differences by emphasizing an example given by Sutton and Barto.  Consider the n-armed bandit problem with 2 arms (i.e. $n=10$).  Each action has two rewards, success and failure (binary actions).
+In a supervised learning setting we might infer an action was "correct" if you got success, and if you got failure, you may assume the *other* action was "success".
+Then as you play, you can tally how many times an action was inferred to be correct, and you pick the action based on the tallys (more tallys = higher chance of winning).
+
+Suppose the actions we're deterministic (i.e. they're assigned be either completely success or completely failure), then this algorithm would never be wrong.  After a single choice, we would know exactly what action we would fix on.  But if the actions were stochastic (each action has a *probability* of success), then this is certainly not the case.
+
+In this case, the supervised learning approach would work *only* if the probabilities fulfill the assumption that one action is bad (failure) and the other is good (success).  Hence, we need one action will probability of success greater than $\frac{1}{2}$, with the other having a probability of success less than $\frac{1}{2}$.  Then, the algorithm would fixate on the better choice, and we would win.
+
+But if *both* were good (probability of success over $\frac{1}{2}$), or *both* were bad (probability of success less than $\frac{1}{2}$), than the supervised learning methods how no way of determining which choice is *better* (or *worse*).  In the *both bad* case, the algorithm would likely pick a failing action, and always assume the other action is better.  When it picks the other option (and *also* gets failure), it would flip back to the first choice.  This cycles, and we get an oscillating algorithm that cannot truly find the better choice of the two.  In the *both good* case, we would quickly fixate on a single action (since it usually wins, the other must usually lose, right?), typically, the first action picked.
+
+So what does a reinforcement learning approach look like?
