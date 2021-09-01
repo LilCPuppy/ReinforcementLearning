@@ -100,4 +100,5 @@ We then define the *next* timestep as
 $$
 \pi_{t+1}(x) = \pi_t(d_t) + \alpha\Big[1 - \pi_t(d_t)\Big].
 $$
-If the action inferred to be correct on play $t$ was $d_t$, then we update $\pi_t(d_t)$ an $\alpha$ amount from it's current value toward $1$  We then inversely adjust the other probabilities so they sum to one.  We call this algorithms the $L_{R-P}$ (linear, reward-penalty) algorithm.  If we do nothing on a failure, we call this the $L_{R-I}$ algorithm (linear, reward-inaction).
+If the action inferred to be correct on play $t$ was $d_t$
+, then we update $\pi_t(d_t)$ an $\alpha$ amount from it's current value toward $1$  We then inversely adjust the other probabilities so they sum to one.  We call this algorithms the $L_{R-P}$ (linear, reward-penalty) algorithm.  If we do nothing on a failure, we call this the $L_{R-I}$ algorithm (linear, reward-inaction).
